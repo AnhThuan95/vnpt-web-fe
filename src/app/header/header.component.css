@@ -1,15 +1,26 @@
-.header {
-
-}
-
 .container {
   width: 1200px;
   margin: 0 auto;
 }
+
 /*logo*/
 .logo img {
   width: 120px;
   height: 120px;
+}
+
+.ten {
+padding-top: 40px;
+padding-left: 5px;
+}
+
+.ten p{
+font-style: normal;
+font-family: Segoe UI, Arial, Verdana, Helvetica, sans-serif;
+font-size: 20px;
+font-weight: bold;
+color: #0064c8;
+margin: 5px;
 }
 
 @media only screen and (max-width: 770px) {
@@ -18,20 +29,7 @@
   }
 }
 
-.ten {
-  padding-top: 40px;
-  padding-left: 5px;
-}
-
-.ten p{
-  font-style: normal;
-  font-family: Segoe UI, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-  color: #0064c8;
-  margin: 5px;
-}
-
+/*navbar*/
 .navbar a {
   font-style: normal;
   font-family: Segoe UI, Arial, Verdana, Helvetica, sans-serif;
@@ -40,9 +38,8 @@
   font-weight: bold;
 }
 
-img {
-  width: 20px;
-  height: 20px;
+li {
+  padding-right: 5px;
 }
 
 .dropdown {
