@@ -24,16 +24,19 @@ margin: 5px;
 }
 
 @media only screen and (max-width: 770px) {
-  .ten {
+  .ten #an{
     display: none;
   }
 }
 
 /*navbar*/
+.position-sticky {
+  z-index: 1;
+}
 .navbar a {
   font-style: normal;
   font-family: Segoe UI, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   color: white;
   font-weight: bold;
 }
