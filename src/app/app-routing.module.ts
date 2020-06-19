@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'news/promotion-news',
-    component: PromotionNewsComponent,
+    loadChildren: './promotion-news/promotion-news-routing.module#PromotionNewsRoutingModule'
   },
   {
     path: 'news/vnpt-news',

@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { PromotionNewsComponent } from './promotion-news/promotion-news.component';
 import { HatinhNewsComponent } from './hatinh-news/hatinh-news.component';
 import { VnptNewsComponent } from './vnpt-news/vnpt-news.component';
+import {PromotionNewsModule} from "./promotion-news/promotion-news.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { VnptNewsComponent } from './vnpt-news/vnpt-news.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PromotionNewsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
