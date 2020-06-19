@@ -1,0 +1,16 @@
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.r1 {
+  height: 100px;
+}
+
+p {
+  font-style: normal;
+  font-family: Segoe UI, Arial, Verdana, Helvetica, sans-serif;
+  font-size: 10px;
+  color: white;
+  margin-bottom: 2px;
+}

@@ -1,0 +1,69 @@
+.header {
+
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+/*logo*/
+.logo img {
+  width: 120px;
+  height: 120px;
+}
+
+@media only screen and (max-width: 770px) {
+  .ten {
+    display: none;
+  }
+}
+
+.ten {
+  padding-top: 40px;
+  padding-left: 5px;
+}
+
+.ten p{
+  font-style: normal;
+  font-family: Segoe UI, Arial, Verdana, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #0064c8;
+  margin: 5px;
+}
+
+.navbar a {
+  font-style: normal;
+  font-family: Segoe UI, Arial, Verdana, Helvetica, sans-serif;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+img {
+  width: 20px;
+  height: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/*sub-menu*/
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.dropdown-content a{
+  color: white;
+  padding: 10px 10px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
