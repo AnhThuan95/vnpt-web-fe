@@ -2,61 +2,40 @@
   <div class="container mc0">
     <div class="row justify-content-between">
       <div class="col-9">
-        <p>
-          Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum,
-          altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
-          Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
-        </p>
-
-        <p>
-          Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum,
-          altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
-          Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum,
-          altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
-          Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
-        </p>
-
-        <p>
-          Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum,
-          altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
-          Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum,
-          altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
-          Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
-        </p>
-
-        <p>
-          Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum,
-          altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
-          Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum,
-          altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
-          Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
-        </p>
-
-        <p>
-          Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum,
-          altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
-          Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
-        </p>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-white pl-0 pt-3">
+            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="/">Tin tức</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Tin khuyến mãi</li>
+          </ol>
+        </nav>
+<!--        <a routerLink="create">Tạo tin mới</a>-->
+        <button type="button" class="btn btn-primary" routerLink="create">
+          <span class="badge badge-light">+</span> Tạo tin mới
+          <span class="sr-only">unread messages</span>
+        </button>
+        <br><br>
+        <div class="row ds pt-3 pb-3" *ngFor="let item of news, index as i">
+          <a class="col-md-12 col-lg-4" [routerLink]="['detail',item.id]"><img src="{{item.imgUrl}}"></a>
+          <div class="col-md-12 col-lg-8 pt-2">
+            <p><a [routerLink]="['detail',item.id]">{{item.title}}</a></p>
+            <p>{{item.description}}</p>
+          </div>
+          <div *ngIf="!news"><h3>Danh sách rỗng</h3></div>
+        </div>
       </div>
       <div class="col-2 mt-5 p-0">
-        <div class="tin">
-          <div class="link-tin">
-            <a routerLink="/news/promotion-news">Tin khuyến mãi</a>
-          </div>
-          <div class="link-tin">
-            <a routerLink="/news/vnpt-news">Tin VNPT</a>
-          </div>
-          <div class="link-tin">
-            <a routerLink="/news/hatinh-news">Tin VNPT Hà Tĩnh</a>
+        <div class="position-sticky" style="top:80px;">
+          <div class="tin">
+            <div class="link-tin">
+              <a routerLink="/news/promotion-news">Tin khuyến mãi</a>
+            </div>
+            <div class="link-tin">
+              <a routerLink="/news/vnpt-news">Tin VNPT</a>
+            </div>
+            <div class="link-tin">
+              <a routerLink="/news/hatinh-news">Tin VNPT Hà Tĩnh</a>
+            </div>
           </div>
         </div>
       </div>
