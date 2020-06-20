@@ -7,5 +7,14 @@ img {
 }
 
 .ds {
-  border-bottom: 1px solid #dedede;
+  border-bottom: 2px solid #dedede;
+}
+
+.tit {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.nav-link {
+  font-weight: 500;
 }

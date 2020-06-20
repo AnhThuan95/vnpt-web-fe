@@ -10,21 +10,21 @@
 }
 
 .ten {
-padding-top: 40px;
-padding-left: 5px;
+  padding-top: 40px;
+  padding-left: 5px;
 }
 
-.ten p{
-font-style: normal;
-font-family: Segoe UI, Arial, Verdana, Helvetica, sans-serif;
-font-size: 20px;
-font-weight: bold;
-color: #0064c8;
-margin: 5px;
+.ten p {
+  font-style: normal;
+  font-family: Segoe UI, Arial, Verdana, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #0064c8;
+  margin: 5px;
 }
 
 @media only screen and (max-width: 770px) {
-  .ten #an{
+  .ten #an {
     display: none;
   }
 }
@@ -33,6 +33,7 @@ margin: 5px;
 .position-sticky {
   z-index: 1;
 }
+
 .navbar a {
   font-style: normal;
   font-family: Segoe UI, Arial, Verdana, Helvetica, sans-serif;
@@ -57,7 +58,7 @@ li {
   z-index: 1;
 }
 
-.dropdown-content a{
+.dropdown-content a {
   color: white;
   padding: 8px 8px;
   font-size: 13px;

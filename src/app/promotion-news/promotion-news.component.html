@@ -15,8 +15,8 @@
 
         <div class="row ds pt-3 pb-3" *ngFor="let item of news, index as i">
           <a class="col-md-12 col-lg-4" [routerLink]="['detail',item.id]"><img src="{{item.imgUrl}}"></a>
-          <div class="col-md-12 col-lg-8 pt-2">
-            <p><a [routerLink]="['detail',item.id]">{{item.title}}</a></p>
+          <div class="col-md-12 col-lg-8 pt-3">
+            <p><a class="tit" [routerLink]="['detail',item.id]">{{item.title}}</a></p>
             <p>{{item.description}}</p>
           </div>
           <div *ngIf="!news"><h3>Danh sách rỗng</h3></div>
@@ -24,16 +24,14 @@
       </div>
       <div class="col-2 mt-5 p-0">
         <div class="position-sticky" style="top:80px;">
-          <div class="tin">
-            <div class="link-tin">
-              <a routerLink="/news/promotion-news">Tin khuyến mãi</a>
-            </div>
-            <div class="link-tin">
-              <a routerLink="/news/vnpt-news">Tin VNPT</a>
-            </div>
-            <div class="link-tin">
-              <a routerLink="/news/hatinh-news">Tin VNPT Hà Tĩnh</a>
-            </div>
+          <nav class="nav flex-column">
+              <a class="nav-link active" routerLink="/news/promotion-news">Tin khuyến mãi</a>
+              <a class="nav-link" routerLink="/news/vnpt-news">Tin VNPT</a>
+              <a class="nav-link" routerLink="/news/hatinh-news">Tin VNPT Hà Tĩnh</a>
+          </nav>
+          <br><br>
+          <div>
+            <h3>Tin doc nhieu</h3>
           </div>
         </div>
       </div>
