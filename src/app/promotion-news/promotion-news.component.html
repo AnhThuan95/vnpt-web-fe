@@ -4,17 +4,15 @@
       <div class="col-9">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-white pl-0 pt-3">
-            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i> Trang chủ</a></li>
             <li class="breadcrumb-item"><a href="/">Tin tức</a></li>
             <li class="breadcrumb-item active" aria-current="page">Tin khuyến mãi</li>
           </ol>
         </nav>
-<!--        <a routerLink="create">Tạo tin mới</a>-->
         <button type="button" class="btn btn-primary" routerLink="create">
-          <span class="badge badge-light">+</span> Tạo tin mới
-          <span class="sr-only">unread messages</span>
-        </button>
+          <i class="fa fa-plus-square"></i> Tạo tin mới</button>
         <br><br>
+
         <div class="row ds pt-3 pb-3" *ngFor="let item of news, index as i">
           <a class="col-md-12 col-lg-4" [routerLink]="['detail',item.id]"><img src="{{item.imgUrl}}"></a>
           <div class="col-md-12 col-lg-8 pt-2">
