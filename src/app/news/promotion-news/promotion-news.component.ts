@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {INews} from "../interface/i-news";
-import {NewsService} from "../service/news.service";
+import {INews} from "../../interface/i-news";
+import {NewsService} from "../../service/news.service";
 
 @Component({
   selector: 'app-promotion-news',

@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
-import {PromotionNewsComponent} from "./promotion-news/promotion-news.component";
-import {VnptNewsComponent} from "./vnpt-news/vnpt-news.component";
-import {HatinhNewsComponent} from "./hatinh-news/hatinh-news.component";
+import {VnptNewsComponent} from "./news/vnpt-news/vnpt-news.component";
+import {HatinhNewsComponent} from "./news/hatinh-news/hatinh-news.component";
 
 const routes: Routes = [
   {
@@ -13,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'news/promotion-news',
-    loadChildren: './promotion-news/promotion-news-routing.module#PromotionNewsRoutingModule'
+    loadChildren: './news/promotion-news/promotion-news-routing.module#PromotionNewsRoutingModule'
   },
   {
     path: 'news/vnpt-news',
