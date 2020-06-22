@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'news/hatinh-news',
     component: HatinhNewsComponent,
   },
+  {
+    path: 'support/transaction',
+    loadChildren: './support/transaction/transaction-routing.module#TransactionRoutingModule'
+  }
 ];
 
 @NgModule({
