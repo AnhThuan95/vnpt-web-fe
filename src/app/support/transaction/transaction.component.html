@@ -1,1 +1,48 @@
-<p>transaction works!</p>
+<div class="row justify-content-center">
+  <div class="container mc0">
+    <div class="row justify-content-between">
+      <div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-white pl-0 pt-3">
+            <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i> Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="/">Hỗ trợ khách hàng</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Điểm giao dịch</li>
+          </ol>
+        </nav>
+        <button type="button" class="btn btn-primary" routerLink="create">
+          <i class="fa fa-plus-square"></i> Thêm điểm giao dịch
+        </button>
+        <br><br>
+
+        <table class="table table-hover table-borderless">
+          <thead class="thead-light">
+          <tr>
+            <th scope="col">STT</th>
+            <th scope="col">Điểm giao dịch</th>
+            <th scope="col">Hạng kênh</th>
+            <th scope="col">Địa chỉ</th>
+            <th scope="col">Số điện thoại</th>
+            <th scope="col">Sửa</th>
+            <th scope="col">Xóa</th>
+          </tr>
+          </thead>
+          <tbody *ngFor="let item of transactions, index as i">
+          <tr class="table-light">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{item.pointName}}</td>
+            <td>Điểm giao dịch</td>
+            <td>{{item.address}}</td>
+            <td>{{item.phone}}</td>
+            <td><button class="btn btn-warning" [routerLink]="['edit',item.id]" aria-label="Edit">
+              <i class="fa fa-pencil" aria-hidden="true"></i></button>
+            </td>
+            <td><a class="btn btn-danger" [routerLink]="['delete',item.id]" aria-label="Delete">
+              <i class="fa fa-trash" aria-hidden="true"></i></a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
