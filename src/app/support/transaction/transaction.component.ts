@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ITransaction} from "../../interface/i-transaction";
 import {TransactionService} from "../../service/transaction.service";
 import {HttpErrorResponse} from "@angular/common/http";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-transaction',
@@ -12,9 +11,9 @@ import {Router} from "@angular/router";
 export class TransactionComponent implements OnInit {
   transactions: ITransaction[];
   message: string;
+  index = 0;
 
-  constructor(private transactionService: TransactionService,
-              private router: Router) {
+  constructor(private transactionService: TransactionService) {
   }
 
   ngOnInit() {
@@ -22,27 +21,30 @@ export class TransactionComponent implements OnInit {
   }
 
   delete(item) {
-    if (confirm("Xóa " + item.pointName + "?")) {
-      this.transactionService.deleteTransaction(item.id).subscribe(next => {
-      }, (error: HttpErrorResponse) => {
-        console.log(error);
-        if (error.status === 200) {
-          alert("Xóa thành công!");
-          this.getList();
-        } else {
-          this.message = 'error';
-        }
-      });
-    } else {
-    }
+    this.transactionService.deleteTransaction(item.id).subscribe(next => {
+    }, (error: HttpErrorResponse) => {
+      // console.log(error);
+      if (error.status === 200) {
+        // alert("Xóa thành công!");
+        this.getList();
+        // console.log('1');
+        this.index = 0;
+      } else {
+        this.message = 'error';
+      }
+    });
   }
 
   getList() {
     this.transactionService.getTransaction().subscribe(next => {
       this.transactions = next;
-      console.log(next);
+      // console.log(next);
     }, error => {
       this.message = error.error.message;
     });
+  }
+
+  save(i) {
+    this.index = i;
   }
 }

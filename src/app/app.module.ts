@@ -13,6 +13,7 @@ import {PromotionNewsModule} from "./news/promotion-news/promotion-news.module";
 import {HttpClientModule} from "@angular/common/http";
 import {TransactionComponent} from './support/transaction/transaction.component';
 import {TransactionModule} from "./support/transaction/transaction.module";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {TransactionModule} from "./support/transaction/transaction.module";
     AppRoutingModule,
     PromotionNewsModule,
     TransactionModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
