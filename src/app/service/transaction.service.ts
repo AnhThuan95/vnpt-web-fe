@@ -16,4 +16,8 @@ export class TransactionService {
   getTransaction(): Observable<ITransaction[]> {
     return this.http.get<ITransaction[]>(`${this.url.link}/support/channel/transaction`);
   }
+
+  deleteTransaction(id: number) {
+    return this.http.delete(`${this.url.link}/support/delete/${id}`);
+  }
 }
