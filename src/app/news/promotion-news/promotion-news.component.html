@@ -14,7 +14,7 @@
         <br><br>
 
         <div class="row ds pt-3 pb-3" *ngFor="let item of news, index as i">
-          <a class="col-md-12 col-lg-4" [routerLink]="['detail',item.id]"><img src="{{item.imgUrl}}"></a>
+          <a class="col-md-12 col-lg-4" [routerLink]="['detail',item.id]"><img [src]="urls[i]" width="200px"></a>
           <div class="col-md-12 col-lg-8 pt-3">
             <p><a class="tit" [routerLink]="['detail',item.id]">{{item.title}}</a></p>
             <p>{{item.description}}</p>
