@@ -32,8 +32,11 @@ export class PromotionNewsComponent implements OnInit {
                 this.urls.push(this.retrievedImage);
               }
             );
+        } else {
+          this.urls.push(null);
         }
       }
+      console.log(this.urls);
     }, error => {
       this.message = error.error;
     });

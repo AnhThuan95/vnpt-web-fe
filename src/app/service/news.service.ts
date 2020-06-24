@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {INews} from "../interface/i-news";
@@ -38,7 +38,10 @@ export class NewsService {
 
   updateNews(news: INews): Observable<INews> {
     return this.http.put<INews>(`${this.url.link}/news/editNews/${news.id}`, news);
+  }
 
+  deleteNews(id: number) {
+    return this.http.delete(`${this.url.link}/news/delete/${id}`);
   }
 
   get3PromotionNews(): Observable<INews[]> {

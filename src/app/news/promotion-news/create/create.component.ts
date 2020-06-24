@@ -72,7 +72,7 @@ export class CreateComponent implements OnInit {
         console.log(error);
         if (error.status === 200) {
           alert(error.error.text);
-          this.router.navigate(['']).then(e => {
+          this.router.navigate(['news/promotion-news']).then(e => {
             if (e) {
               console.log('Navigation is successful!');
             } else {

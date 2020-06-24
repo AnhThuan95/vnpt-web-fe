@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NewsService} from "../../../service/news.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {INews} from "../../../interface/i-news";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-detail',
@@ -13,7 +14,7 @@ export class DetailComponent implements OnInit {
   message: string;
   strs: string[] = [];
 
-  constructor(private newsService: NewsService,
+  constructor(private newsService: NewsService, private router: Router,
               private route: ActivatedRoute) {
   }
 
@@ -30,5 +31,26 @@ export class DetailComponent implements OnInit {
         this.message = error.error.message;
       }
     )
+  }
+
+  delete() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    console.log(id);
+    this.newsService.deleteNews(id).subscribe(next => {
+      console.log(next);
+    }, (error: HttpErrorResponse) => {
+      console.log(error);
+      if (error.status === 200) {
+        this.router.navigate(['news/promotion-news']).then(e => {
+          if (e) {
+            console.log('Navigation is successful!');
+          } else {
+            console.log('Navigation has failed!');
+          }
+        });
+      } else {
+        this.message = 'error';
+      }
+    });
   }
 }
