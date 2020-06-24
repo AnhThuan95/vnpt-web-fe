@@ -4,8 +4,8 @@
       <div class="col-9">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-white pl-0 pt-3">
-            <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i> Trang chủ</a></li>
-            <li class="breadcrumb-item"><a href="/">Tin tức</a></li>
+            <li class="breadcrumb-item"><a routerLink="/"><i class="fa fa-home"></i> Trang chủ</a></li>
+            <li class="breadcrumb-item"><a routerLink="/">Tin tức</a></li>
             <li class="breadcrumb-item active" aria-current="page">Tin khuyến mãi</li>
           </ol>
         </nav>
@@ -16,7 +16,7 @@
         <div class="row ds pt-3 pb-3" *ngFor="let item of news, index as i">
           <a class="col-md-12 col-lg-4" [routerLink]="['detail',item.id]"><img [src]="urls[i]" width="200px"></a>
           <div class="col-md-12 col-lg-8 pt-3">
-            <p><a class="tit" [routerLink]="['detail',item.id]">{{item.title}}</a></p>
+            <p><a class="tit" routerLink="detail/{{item.id}}">{{item.title}}</a></p>
             <p>{{item.description}}</p>
           </div>
           <div *ngIf="!news"><h3>Danh sách rỗng</h3></div>

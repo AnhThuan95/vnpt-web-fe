@@ -1,1 +1,51 @@
-<p>detail works!</p>
+<div class="row justify-content-center">
+  <div class="container mc0">
+    <div class="row justify-content-between">
+      <div class="col-9">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-white pl-0 pt-3">
+            <li class="breadcrumb-item"><a routerLink="/"><i class="fa fa-home"></i> Trang chủ</a></li>
+            <li class="breadcrumb-item"><a routerLink="/news/promotion-news">Tin khuyến mãi</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Nội dung</li>
+          </ol>
+        </nav>
+        <div class="rounded border bg-light">
+          <div *ngIf="news; else nothing" class="m-3">
+            <p class="tit text-uppercase font-weight-bold">{{news.title}}&nbsp;&nbsp;&nbsp;&nbsp;<span class="badge font-weight-normal">{{news.postDate}}</span></p>
+            <p class="text-capitalize font-weight-bold">{{news.description}}</p>
+            <br>
+            <div *ngFor="let str of strs, index as i">
+              <p>{{str}}</p>
+            </div>
+            <p>Nguồn: {{news.author}}</p>
+            <div class="title">
+              <a routerLink="../../edit/{{news.id}}">Chỉnh sửa tin</a>
+            </div>
+          </div>
+
+          <ng-template #nothing>
+            <p>Nothing to show</p>
+          </ng-template>
+        </div>
+
+        <div class="link-tin">
+          <p>Tin mới nhất</p>
+
+        </div>
+      </div>
+      <div class="col-2 mt-5 p-0">
+        <div class="position-sticky" style="top:80px;">
+          <nav class="nav flex-column">
+            <a class="nav-link active" routerLink="/news/promotion-news">Tin khuyến mãi</a>
+            <a class="nav-link" routerLink="/news/vnpt-news">Tin VNPT</a>
+            <a class="nav-link" routerLink="/news/hatinh-news">Tin VNPT Hà Tĩnh</a>
+          </nav>
+          <br><br>
+          <div>
+            <h3>Tin doc nhieu</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
