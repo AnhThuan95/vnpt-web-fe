@@ -25,7 +25,7 @@ export class PromotionNewsComponent implements OnInit {
 
       for (const test of this.news) {
         if (test.imgUrl !== null) {
-          this.uploadService.getImage(test.imgUrl)
+          this.uploadService.getImage(test.imgUrl.name)
             .subscribe(
               res => {
                 this.retrievedImage = 'data:image/jpeg;base64,' + res.picByte;

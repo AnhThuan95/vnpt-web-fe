@@ -24,7 +24,9 @@ export class CreateComponent implements OnInit {
   ngOnInit() {
     this.data = this.fb.group({
       title: '',
-      imgUrl: '',
+      imgUrl: {
+        name: '',
+      },
       description: '',
       content: '',
       author: '',
@@ -60,7 +62,7 @@ export class CreateComponent implements OnInit {
     if (this.url === undefined) {
       this.url = '';
     }
-    this.data.value.imgUrl = this.url;
+    this.data.value.imgUrl.name = this.url;
     console.log(this.data.value);
 
     this.newsService.createNews(this.data.value).subscribe(next => {
