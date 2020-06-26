@@ -9,9 +9,10 @@
             <li class="breadcrumb-item active" aria-current="page">Tin khuyến mãi</li>
           </ol>
         </nav>
-        <button type="button" class="btn btn-primary" routerLink="create">
-          <i class="fa fa-plus-square"></i> Tạo tin mới</button>
-        <br><br>
+        <div class="create-but pb-4">
+          <button type="button" class="btn btn-primary" routerLink="create">
+            <i class="fa fa-plus-square"></i> Tạo tin mới</button>
+        </div>
 
         <div class="row ds pt-3 pb-3" *ngFor="let item of pageOfItems, index as i">
           <a class="col-md-12 col-lg-4" [routerLink]="['detail',item.id]"><img [src]="'data:image/jpeg;base64,' + item.imgUrl.picByte" width="200px"></a>
@@ -21,7 +22,7 @@
           </div>
           <div *ngIf="!news"><h3>Danh sách rỗng</h3></div>
         </div>
-        <div class="pagination1">
+        <div class="pagination1 mt-4">
           <jw-pagination [pageSize]="size" [items]="news" (changePage)="onChangePage($event)"></jw-pagination>
         </div>
         <div class="tin">
@@ -40,7 +41,7 @@
           </nav>
           <br><br>
           <div>
-            <h3>Tin doc nhieu</h3>
+            <h3>Tin đọc nhiều</h3>
           </div>
         </div>
       </div>
