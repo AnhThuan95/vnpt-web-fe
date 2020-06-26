@@ -13,13 +13,22 @@
           <i class="fa fa-plus-square"></i> Tạo tin mới</button>
         <br><br>
 
-        <div class="row ds pt-3 pb-3" *ngFor="let item of news, index as i">
+        <div class="row ds pt-3 pb-3" *ngFor="let item of pageOfItems, index as i">
           <a class="col-md-12 col-lg-4" [routerLink]="['detail',item.id]"><img [src]="urls[i]" width="200px"></a>
-          <div class="col-md-12 col-lg-8 pt-3">
+          <div class="col-md-12 col-lg-8 pt-0">
             <p><a class="tit" routerLink="detail/{{item.id}}">{{item.title}}</a></p>
             <p>{{item.description}}</p>
           </div>
           <div *ngIf="!news"><h3>Danh sách rỗng</h3></div>
+        </div>
+        <div class="pagination1">
+          <jw-pagination [pageSize]="size" [items]="news" (changePage)="onChangePage($event)"></jw-pagination>
+        </div>
+        <div class="tin">
+          <h4>Tin mới:</h4>
+          <div class="row m-1" *ngFor="let item of news3, index as i">
+            <a class="" routerLink="detail/{{item.id}}">{{item.title}}</a>
+          </div>
         </div>
       </div>
       <div class="col-2 mt-5 p-0">

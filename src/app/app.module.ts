@@ -14,6 +14,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {TransactionComponent} from './support/transaction/transaction.component';
 import {TransactionModule} from "./support/transaction/transaction.module";
 import {FormsModule} from "@angular/forms";
+import {JwPaginationModule} from "jw-angular-pagination";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {FormsModule} from "@angular/forms";
     PromotionNewsModule,
     TransactionModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    JwPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

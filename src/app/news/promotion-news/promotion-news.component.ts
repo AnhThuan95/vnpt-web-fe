@@ -11,9 +11,13 @@ import {UploadService} from "../../service/upload.service";
 export class PromotionNewsComponent implements OnInit {
   news: INews[];
   message: string;
+  news3: INews[];
 
   urls: string[] = [];
   retrievedImage: string;
+
+  pageOfItems: Array<any>;
+  size = 5;
 
   constructor(private newsService: NewsService,
               private uploadService: UploadService) { }
@@ -44,5 +48,14 @@ export class PromotionNewsComponent implements OnInit {
     }, error => {
       this.message = error.error;
     });
+
+    this.newsService.get3PromotionNews().subscribe(next => {
+      this.news3 = next;
+    })
+  }
+
+  onChangePage(pageOfItems: Array<any>) {
+    // update current page of items
+    this.pageOfItems = pageOfItems;
   }
 }
