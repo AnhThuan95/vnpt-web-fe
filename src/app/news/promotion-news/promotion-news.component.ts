@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {INews} from "../../interface/i-news";
 import {NewsService} from "../../service/news.service";
-import {UploadService} from "../../service/upload.service";
 
 @Component({
   selector: 'app-promotion-news',
@@ -13,38 +12,15 @@ export class PromotionNewsComponent implements OnInit {
   message: string;
   news3: INews[];
 
-  urls: string[] = [];
-  retrievedImage: string;
-
   pageOfItems: Array<any>;
-  size = 5;
+  size = 2;
 
-  constructor(private newsService: NewsService,
-              private uploadService: UploadService) { }
+  constructor(private newsService: NewsService) { }
 
   ngOnInit(){
     this.newsService.getPromotionNews().subscribe(next => {
       this.news = next;
       console.log(next);
-
-      for (let i = 0; i < this.news.length; i++) {
-        this.urls.push('');
-      }
-
-      for (let i = 0; i < this.news.length; i++) {
-        if (this.news[i].imgUrl !== null) {
-          this.uploadService.getImage(this.news[i].imgUrl.name)
-            .subscribe(
-              res => {
-                this.retrievedImage = 'data:image/jpeg;base64,' + res.picByte;
-                this.urls.splice(i, 1, this.retrievedImage);
-              }
-            );
-        } else {
-          this.urls.splice(i, 1, null);
-        }
-      }
-      console.log(this.urls);
     }, error => {
       this.message = error.error;
     });
@@ -55,7 +31,6 @@ export class PromotionNewsComponent implements OnInit {
   }
 
   onChangePage(pageOfItems: Array<any>) {
-    // update current page of items
     this.pageOfItems = pageOfItems;
   }
 }

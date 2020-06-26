@@ -13,6 +13,7 @@ export class DetailComponent implements OnInit {
   news: INews;
   message: string;
   strs: string[] = [];
+  news3: INews[];
 
   constructor(private newsService: NewsService, private router: Router,
               private route: ActivatedRoute) {
@@ -30,7 +31,11 @@ export class DetailComponent implements OnInit {
         console.log(error);
         this.message = error.error.message;
       }
-    )
+    );
+
+    this.newsService.get3PromotionNews().subscribe(next => {
+      this.news3 = next;
+    })
   }
 
   delete() {

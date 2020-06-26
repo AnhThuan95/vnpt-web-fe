@@ -11,9 +11,12 @@
         </nav>
         <div class="rounded border bg-light">
           <div *ngIf="news; else nothing" class="m-3">
-            <p class="tit text-uppercase font-weight-bold">{{news.title}}&nbsp;&nbsp;&nbsp;&nbsp;<span class="badge font-weight-normal">{{news.postDate}}</span></p>
+            <p class="tit text-uppercase font-weight-bold">{{news.title}}&nbsp;&nbsp;&nbsp;&nbsp;<span
+              class="badge font-weight-normal">{{news.postDate}}</span></p>
             <p class="text-capitalize font-weight-bold">{{news.description}}</p>
-            <br>
+            <div class="d-flex justify-content-center m-2">
+              <img [src]="'data:image/jpeg;base64,' + news.imgUrl.picByte" width="80%" alt="">
+            </div>
             <div *ngFor="let str of strs, index as i">
               <p>{{str}}</p>
             </div>
@@ -55,9 +58,11 @@
           </ng-template>
         </div>
 
-        <div class="link-tin">
-          <p>Tin mới nhất</p>
-
+        <div class="tin mt-5">
+          <h4>Tin mới:</h4>
+          <div class="row m-1" *ngFor="let item of news3, index as i">
+            <a class="" routerLink="detail/{{item.id}}">{{item.title}}</a>
+          </div>
         </div>
       </div>
       <div class="col-2 mt-5 p-0">
@@ -69,7 +74,7 @@
           </nav>
           <br><br>
           <div>
-            <h3>Tin doc nhieu</h3>
+            <h4>Tin đọc nhiều</h4>
           </div>
         </div>
       </div>
