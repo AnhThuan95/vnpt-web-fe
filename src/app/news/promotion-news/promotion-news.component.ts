@@ -23,17 +23,21 @@ export class PromotionNewsComponent implements OnInit {
       this.news = next;
       console.log(next);
 
-      for (const test of this.news) {
-        if (test.imgUrl !== null) {
-          this.uploadService.getImage(test.imgUrl.name)
+      for (let i = 0; i < this.news.length; i++) {
+        this.urls.push('');
+      }
+
+      for (let i = 0; i < this.news.length; i++) {
+        if (this.news[i].imgUrl !== null) {
+          this.uploadService.getImage(this.news[i].imgUrl.name)
             .subscribe(
               res => {
                 this.retrievedImage = 'data:image/jpeg;base64,' + res.picByte;
-                this.urls.push(this.retrievedImage);
+                this.urls.splice(i, 1, this.retrievedImage);
               }
             );
         } else {
-          this.urls.push(null);
+          this.urls.splice(i, 1, null);
         }
       }
       console.log(this.urls);
