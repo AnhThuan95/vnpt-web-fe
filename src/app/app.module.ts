@@ -9,6 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {HomeComponent} from './home/home.component';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
+import { AgmCoreModule } from '@agm/core';
 
 import {PromotionNewsComponent} from './news/promotion-news/promotion-news.component';
 import {PromotionNewsModule} from "./news/promotion-news/promotion-news.module";
@@ -42,6 +43,9 @@ import {IntroductionModule} from "./introduction/introduction.module";
     FormsModule,
     JwPaginationModule,
     IntroductionModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAWIG91eX9VIfqBQMJjnLAsXZb3ncn6-wI'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

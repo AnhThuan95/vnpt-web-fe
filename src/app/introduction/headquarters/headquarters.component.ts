@@ -6,10 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./headquarters.component.css']
 })
 export class HeadquartersComponent implements OnInit {
+  lat: number;
+  lng: number;
+  zoom: number;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.lat = 18.339334;
+    this.lng = 105.895370;
+    this.zoom = 17;
   }
 
+  mapClick(event) {
+    // console.log(event);
+  }
+
+  mapDoubleClick(event) {
+    this.lat = event.coords.lat;
+    this.lng = event.coords.lng;
+  }
 }

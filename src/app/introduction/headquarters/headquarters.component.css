@@ -1,0 +1,33 @@
+.card-body {
+  padding: 0;
+}
+
+agm-map {
+  height: 500px;
+  width: 100%;
+}
+
+.mc0 {
+  width: 1200px;
+}
+
+.vht {
+  text-align: right;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.card-header {
+  background: url("src/assets/img/grey.jpg");
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  height: 32px;
+  line-height: 5px;
+}
+
+.card-text {
+  padding-left: 15px;
+  font-size: 16px;
+  font-weight: 500;
+}

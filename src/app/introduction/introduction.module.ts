@@ -4,6 +4,7 @@ import {IntroductionRoutingModule} from "./introduction-routing.module";
 import {BusinessComponent} from "./business/business.component";
 import {OrganizationsComponent} from "./organizations/organizations.component";
 import {HeadquartersComponent} from "./headquarters/headquarters.component";
+import {AgmCoreModule} from "@agm/core";
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {HeadquartersComponent} from "./headquarters/headquarters.component";
   ],
   imports: [
     CommonModule,
-    IntroductionRoutingModule
+    IntroductionRoutingModule,
+    AgmCoreModule
   ]
 })
 export class IntroductionModule {
