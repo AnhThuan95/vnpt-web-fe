@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
 import {VnptNewsComponent} from "./news/vnpt-news/vnpt-news.component";
@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'news/promotion-news',
-    loadChildren: './news/promotion-news/promotion-news-routing.module#PromotionNewsRoutingModule'
+    loadChildren: () => import('./news/promotion-news/promotion-news-routing.module').then(m => m.PromotionNewsRoutingModule)
   },
   {
     path: 'news/vnpt-news',
@@ -23,8 +23,12 @@ const routes: Routes = [
     component: HatinhNewsComponent,
   },
   {
+    path: 'introduction',
+    loadChildren: () => import('./introduction/introduction-routing.module').then(m => m.IntroductionRoutingModule)
+  },
+  {
     path: 'support/transaction',
-    loadChildren: './support/transaction/transaction-routing.module#TransactionRoutingModule'
+    loadChildren: () => import('./support/transaction/transaction-routing.module').then(m => m.TransactionRoutingModule)
   }
 ];
 
@@ -38,4 +42,5 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
