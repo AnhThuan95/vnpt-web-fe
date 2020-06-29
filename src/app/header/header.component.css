@@ -5,12 +5,12 @@
 
 /*logo*/
 .logo img {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
 }
 
 .ten {
-  padding-top: 40px;
+  padding-top: 25px;
   padding-left: 5px;
 }
 
@@ -28,8 +28,8 @@
     display: none;
   }
   .logo img {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
   }
 }
 

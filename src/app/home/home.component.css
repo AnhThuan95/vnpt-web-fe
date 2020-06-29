@@ -1,3 +1,48 @@
 .container {
   width: 1200px;
 }
+
+.carousel {
+  width: 95%;
+}
+
+.anh-0 {
+  max-height: 450px;
+  margin: auto;
+}
+
+.carousel-caption {
+  padding: 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  position: relative !important;
+  left: auto;
+  right: auto;
+}
+
+.carousel-indicators li.active {
+  background-color: #0064c8;
+}
+
+.carousel-indicators li {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: #bdcdd9;
+}
+
+.cap {
+  color: black;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  width: 30px;
+  height: 100px;
+}
+
+.icon-around {
+  width: 100px;
+  height: 100px;
+  background-color: palegoldenrod;
+  border-radius: 5px;
+}

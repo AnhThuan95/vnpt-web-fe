@@ -15,6 +15,10 @@ import {TransactionComponent} from './support/transaction/transaction.component'
 import {TransactionModule} from "./support/transaction/transaction.module";
 import {FormsModule} from "@angular/forms";
 import {JwPaginationModule} from "jw-angular-pagination";
+import { IntroductionComponent } from './introduction/introduction.component';
+import { OrganizationsComponent } from './introduction/organizations/organizations.component';
+import { HeadquartersComponent } from './introduction/headquarters/headquarters.component';
+import { BusinessComponent } from './introduction/business/business.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import {JwPaginationModule} from "jw-angular-pagination";
     PromotionNewsComponent,
     HatinhNewsComponent,
     VnptNewsComponent,
-    TransactionComponent
+    TransactionComponent,
+    IntroductionComponent,
+    OrganizationsComponent,
+    HeadquartersComponent,
+    BusinessComponent
   ],
   imports: [
     BrowserModule,
