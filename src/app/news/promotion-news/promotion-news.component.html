@@ -15,7 +15,7 @@
         </div>
 
         <div class="row ds pt-3 pb-3" *ngFor="let item of pageOfItems, index as i">
-          <a class="col-md-12 col-lg-4" [routerLink]="['detail',item.id]"><img [src]="'data:image/jpeg;base64,' + item.imgUrl.picByte" width="200px"></a>
+          <a class="col-md-12 col-lg-4" [routerLink]="['detail',item.id]"><img class="rounded" [src]="'data:image/jpeg;base64,' + item.imgUrl.picByte" width="200px"></a>
           <div class="col-md-12 col-lg-8 pt-0">
             <p><a class="tit" routerLink="detail/{{item.id}}">{{item.title}}</a></p>
             <p>{{item.description}}</p>

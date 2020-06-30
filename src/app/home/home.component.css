@@ -2,6 +2,7 @@
   width: 1200px;
 }
 
+/*  carousel  */
 .carousel {
   width: 95%;
 }
@@ -45,4 +46,25 @@
   height: 100px;
   background-color: palegoldenrod;
   border-radius: 5px;
+}
+
+/*  promotion-news  */
+.tit0 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.des0 {
+  font-weight: 500;
+}
+
+.p-news {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.tit1 {
+  font-size: 20px;
+  font-weight: 600;
 }

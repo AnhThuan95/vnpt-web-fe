@@ -1,4 +1,4 @@
-<div class="row justify-content-center bg-light">
+<div class="row justify-content-center">
   <div id="carousels" class="carousel carousel-fade slide mt-1 bg-white" data-ride="carousel">
     <ol class="carousel-indicators mb-0">
       <li data-target="#carousels" data-slide-to="0" class="active"></li>
@@ -39,7 +39,31 @@
       </div>
     </a>
   </div>
-  <div class="container">
+  <div class="container mt-5">
+    <div class="row m-1">
+      <div class="row col-md-12 col-lg-6 left mr-1">
+        <a [routerLink]="['detail',news4[0].id]"><img class="rounded mb-1" [src]="'data:image/jpeg;base64,' + news4[0].imgUrl.picByte" width="100%"></a>
+        <p><a class="tit0" routerLink="detail/{{news4[0].id}}">{{news4[0].title}}</a></p>
+        <p class="des0">{{news4[0].description}}</p>
+      </div>
+      <div class="row col-md-12 col-lg-6 right align-self-start">
+        <div class="row mb-5">
+          <a class="col-5 left" [routerLink]="['detail',news4[1].id]"><img class="rounded" [src]="'data:image/jpeg;base64,' + news4[1].imgUrl.picByte" width="180px"></a>
+          <p class="col-7 right tit1"><a routerLink="detail/{{news4[1].id}}">{{news4[1].title}}</a></p>
+        </div>
+        <div class="row mb-5">
+          <a class="col-5 left" [routerLink]="['detail',news4[2].id]"><img class="rounded" [src]="'data:image/jpeg;base64,' + news4[2].imgUrl.picByte" width="180px"></a>
+          <p class="col-7 right tit1"><a routerLink="detail/{{news4[2].id}}">{{news4[2].title}}</a></p>
+        </div>
+        <div class="row">
+          <a class="col-5 left" [routerLink]="['detail',news4[3].id]"><img class="rounded" [src]="'data:image/jpeg;base64,' + news4[3].imgUrl.picByte" width="180px"></a>
+          <p class="col-7 right tit1"><a routerLink="detail/{{news4[3].id}}">{{news4[3].title}}</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="p-news col-12 justify-content-center">
+      <a routerLink="news/promotion-news" class="more">Xem thêm <i class="fa fa-forward" aria-hidden="true"></i></a>
+    </div>
     <p>
       Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum,
       altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.

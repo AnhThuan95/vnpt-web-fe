@@ -13,7 +13,7 @@ export class PromotionNewsComponent implements OnInit {
   news3: INews[];
 
   pageOfItems: Array<any>;
-  size = 2;
+  size = 5;
 
   constructor(private newsService: NewsService) { }
 
