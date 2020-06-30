@@ -10,3 +10,8 @@
 .content {
   font-size: 17px;
 }
+
+.nav-link, h4 {
+  font-weight: 500;
+  white-space: nowrap;
+}
