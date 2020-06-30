@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+  <div class="container mc0">
+    <div class="row justify-content-between">
+      <div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-white pl-0 pt-3">
+            <li class="breadcrumb-item"><a routerLink="/"><i class="fa fa-home"></i> Trang chủ</a></li>
+            <li class="breadcrumb-item">Hỗ trợ khách hàng</li>
+            <li class="breadcrumb-item active" aria-current="page">Mã vùng điện thoại trong nước</li>
+          </ol>
+        </nav>
+        <div class="col-md-9">
+          <div class="row">
+            <table class="col-6 table table-hover border">
+              <thead class="bg-primary">
+              <tr>
+                <th class="text-center" scope="col">STT</th>
+                <th scope="col">Tên tỉnh/TP</th>
+                <th scope="col" class="text-center">Mã vùng</th>
+              </tr>
+              </thead>
+              <tbody *ngFor="let item of provinces1, index as i">
+              <tr class="table-light">
+                <th class="text-center" scope="row">{{i + 1}}</th>
+                <td>{{item[0]}}</td>
+                <td class="text-center">{{item[1]}}</td>
+              </tr>
+              </tbody>
+            </table>
+
+            <table class="col-6 table table-hover border">
+              <thead class="bg-primary">
+              <tr>
+                <th class="text-center" scope="col">STT</th>
+                <th scope="col">Tên tỉnh/TP</th>
+                <th scope="col" class="text-center">Mã vùng</th>
+              </tr>
+              </thead>
+              <tbody *ngFor="let item of provinces2, index as i">
+              <tr class="table-light">
+                <th class="text-center" scope="row">{{i + 33}}</th>
+                <td>{{item[0]}}</td>
+                <td class="text-center">{{item[1]}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

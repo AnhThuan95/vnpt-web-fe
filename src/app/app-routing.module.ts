@@ -4,6 +4,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
 import {VnptNewsComponent} from "./news/vnpt-news/vnpt-news.component";
 import {HatinhNewsComponent} from "./news/hatinh-news/hatinh-news.component";
+import {ProvinceComponent} from "./support/province/province.component";
 
 const routes: Routes = [
   {
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'support/transaction',
     loadChildren: () => import('./support/transaction/transaction-routing.module').then(m => m.TransactionRoutingModule)
+  },
+  {
+    path: 'support/province',
+    component: ProvinceComponent
   }
 ];
 

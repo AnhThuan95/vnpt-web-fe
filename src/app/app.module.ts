@@ -21,6 +21,7 @@ import {TransactionModule} from "./support/transaction/transaction.module";
 
 import {IntroductionComponent} from './introduction/introduction.component';
 import {IntroductionModule} from "./introduction/introduction.module";
+import { ProvinceComponent } from './support/province/province.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {IntroductionModule} from "./introduction/introduction.module";
     VnptNewsComponent,
     TransactionComponent,
     IntroductionComponent,
+    ProvinceComponent,
   ],
   imports: [
     BrowserModule,
