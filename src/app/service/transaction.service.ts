@@ -20,4 +20,8 @@ export class TransactionService {
   deleteTransaction(id: number) {
     return this.http.delete(`${this.url.link}/support/delete/${id}`);
   }
+
+  createTransaction(transaction: Partial<ITransaction>): Observable<ITransaction> {
+    return this.http.post<ITransaction>(`${this.url.link}/support/create`, transaction);
+  }
 }

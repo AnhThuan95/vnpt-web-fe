@@ -56,7 +56,15 @@ export class NewsService {
     return this.http.get<INews[]>(`${this.url.link}/news/3news/vnpt`);
   }
 
+  get4VnptNews(): Observable<INews[]> {
+    return this.http.get<INews[]>(`${this.url.link}/news/4news/vnpt`);
+  }
+
   get3HatinhNews(): Observable<INews[]> {
     return this.http.get<INews[]>(`${this.url.link}/news/3news/hatinh`);
+  }
+
+  get4HatinhNews(): Observable<INews[]> {
+    return this.http.get<INews[]>(`${this.url.link}/news/4news/hatinh`);
   }
 }

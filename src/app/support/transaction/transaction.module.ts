@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {CreateComponent} from './create/create.component';
 import {EditComponent} from './edit/edit.component';
 import {TransactionRoutingModule} from "./transaction-routing.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import {TransactionRoutingModule} from "./transaction-routing.module";
   ],
   imports: [
     CommonModule,
-    TransactionRoutingModule
+    TransactionRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class TransactionModule {
