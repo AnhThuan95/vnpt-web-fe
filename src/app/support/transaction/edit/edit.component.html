@@ -1,1 +1,54 @@
-<p>edit works!</p>
+<div class="row justify-content-center">
+  <div class="container mc0">
+    <div class="row justify-content-between">
+      <div class="col-md-9">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-white pl-0 pt-3">
+            <li class="breadcrumb-item"><a routerLink="/"><i class="fa fa-home"></i> Trang chủ</a></li>
+            <li class="breadcrumb-item"><a routerLink="/support/transaction">Điểm giao dịch</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Thêm điểm giao dịch</li>
+          </ol>
+        </nav>
+
+        <div class="rounded border bg-light">
+          <button class="btn btn-primary m-3" routerLink="/support/transaction">
+            <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Quay lại
+          </button>
+          <form novalidate (ngSubmit)="submit()" [formGroup]="data" class="row justify-content-md-center m-3">
+            <div class="form-group row">
+              <label class="col-md-4 col-lg-3 col-form-label">Tên điểm giao dịch:</label>
+              <div class="col-md-8 col-lg-9">
+                <input class="form-control" type="text" formControlName="pointName">
+              </div>
+              <label class="col-md-4 col-lg-3 col-form-label">Địa chỉ giao dịch:</label>
+              <div class="col-md-8 col-lg-9">
+                <input class="form-control" type="text" formControlName="address">
+              </div>
+              <label class="col-md-4 col-lg-3 col-form-label">Số điện thoại:</label>
+              <div class="col-md-8 col-lg-9">
+                <input class="form-control" type="text" formControlName="phone">
+              </div>
+            </div>
+            <div class="col-xl-10 col-lg-9 col-md-8 col-sm-6 col-2 "></div>
+            <div class="col-1">
+              <button type="submit" class="btn btn-success"><i class="fa fa-check-square-o" aria-hidden="true"></i> Xong</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-2 mt-5 p-0">
+        <div class="position-sticky" style="top:80px;">
+          <nav class="nav flex-column">
+            <a class="nav-link active" routerLink="/news/promotion-news">Tin khuyến mãi</a>
+            <a class="nav-link" routerLink="/news/vnpt-news">Tin VNPT</a>
+            <a class="nav-link" routerLink="/news/hatinh-news">Tin VNPT Hà Tĩnh</a>
+          </nav>
+          <br><br>
+          <div>
+            <h3>Tin đọc nhiều</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

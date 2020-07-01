@@ -36,7 +36,7 @@ export class TransactionComponent implements OnInit {
   }
 
   getList() {
-    this.transactionService.getTransaction().subscribe(next => {
+    this.transactionService.getTransactions().subscribe(next => {
       this.transactions = next;
       // console.log(next);
     }, error => {

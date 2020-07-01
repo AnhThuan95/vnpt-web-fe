@@ -13,8 +13,12 @@ export class TransactionService {
               private url: LinkApiService) {
   }
 
-  getTransaction(): Observable<ITransaction[]> {
+  getTransactions(): Observable<ITransaction[]> {
     return this.http.get<ITransaction[]>(`${this.url.link}/support/channel/transaction`);
+  }
+
+  getTransaction(id: number): Observable<ITransaction> {
+    return this.http.get<ITransaction>(`${this.url.link}/support/get/${id}`);
   }
 
   deleteTransaction(id: number) {
@@ -23,5 +27,9 @@ export class TransactionService {
 
   createTransaction(transaction: Partial<ITransaction>): Observable<ITransaction> {
     return this.http.post<ITransaction>(`${this.url.link}/support/create`, transaction);
+  }
+
+  updateTransaction(transaction: Partial<ITransaction>): Observable<ITransaction> {
+    return this.http.put<ITransaction>(`${this.url.link}/support/edit/${transaction.id}`, transaction);
   }
 }

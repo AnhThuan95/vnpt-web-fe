@@ -40,9 +40,9 @@
     </a>
   </div>
   <div class="container mt-5">
-    <div class="row m-1">
+    <div *ngIf="news4" class="row m-1">
       <div class="row col-md-12 col-lg-6 left mr-1">
-        <a [routerLink]="['detail',news4[0].id]"><img class="rounded mb-1" [src]="'data:image/jpeg;base64,' + news4[0].imgUrl.picByte" width="100%"></a>
+        <a routerLink="detail/{{news4[0].id}}"><img class="rounded mb-1" [src]="'data:image/jpeg;base64,' + news4[0].imgUrl.picByte" width="100%"></a>
         <p><a class="tit0" routerLink="detail/{{news4[0].id}}">{{news4[0].title}}</a></p>
         <p class="des0">{{news4[0].description}}</p>
       </div>
