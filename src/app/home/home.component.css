@@ -49,6 +49,20 @@
 }
 
 /*  promotion-news  */
+.promotion0 {
+  background-color: #fafafa;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.promotion {
+  background: url("src/assets/img/bk_news.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
 .tit0 {
   font-size: 22px;
   font-weight: 700;
@@ -61,7 +75,7 @@
 .p-news {
   font-size: 20px;
   text-align: center;
-  margin-top: 5px;
+  margin-top: 15px;
 }
 
 .tit1 {
