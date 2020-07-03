@@ -1,1 +1,76 @@
-<p>edit works!</p>
+<div class="row justify-content-center">
+  <div class="container mc0">
+    <div class="row justify-content-between">
+      <div class="col-md-9">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-white pl-0 pt-3">
+            <li class="breadcrumb-item"><a routerLink="/"><i class="fa fa-home"></i> Trang chủ</a></li>
+            <li class="breadcrumb-item"><a routerLink="/news/vnpt-news">Tin VNPT</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Sửa tin</li>
+          </ol>
+        </nav>
+        <div class="rounded border bg-light">
+          <div *ngIf="news" class="m-3">
+            <button class="btn btn-primary" routerLink="../../detail/{{news.id}}"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Quay lại</button>
+          </div>
+          <form novalidate (ngSubmit)="submit()" [formGroup]="data" class="row justify-content-md-center m-3 ">
+            <div class="form-group row">
+              <label class="col-md-2 col-form-label">News title:</label>
+              <div class="col-md-10">
+                <input class="form-control" type="text" formControlName="title">
+              </div>
+              <label class="col-md-2 col-form-label">Author:</label>
+              <div class="col-md-10">
+                <input class="form-control" type="text" formControlName="author">
+              </div>
+              <label class="col-md-2 col-form-label">Image:</label>
+              <div class="col-md-10">
+                <div class="container row">
+                  <div class="col-md-8">
+                    <input type="file" (change)="onFileChanged($event)">
+                  </div>
+                  <div class="col-md-1 mr-0">
+                    <button type="button" class="btn btn-primary" (click)="onUpload()"><i class="fa fa-upload" aria-hidden="true"></i> Upload</button>
+                  </div>
+                </div>
+                <hr/>
+                <div class="container row">
+                  <div class="col-md-12">
+                    <div *ngIf=message>{{message}}</div>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <label class="col-md-2 col-form-label">Description:</label>
+              <div class="col-md-10">
+                <textarea class="form-control" rows="3" formControlName="description"></textarea>
+              </div>
+              <label class="col-md-2 col-form-label">Content:</label>
+              <div class="col-md-10">
+                <textarea class="form-control" rows="15" formControlName="content"></textarea>
+              </div>
+            </div>
+            <div class="col-xl-10 col-lg-9 col-md-8 col-sm-6 col-2 "></div>
+            <div class="col-1">
+              <button type="submit" class="btn btn-success"><i class="fa fa-check-square-o" aria-hidden="true"></i> Xong</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-2 mt-5 p-0">
+        <div class="position-sticky" style="top:80px;">
+          <nav class="nav flex-column">
+            <h3>Tin tức</h3>
+            <a class="nav-link active" routerLink="/news/promotion-news">Tin khuyến mãi</a>
+            <a class="nav-link" routerLink="/news/vnpt-news">Tin VNPT</a>
+            <a class="nav-link" routerLink="/news/hatinh-news">Tin VNPT Hà Tĩnh</a>
+          </nav>
+          <br><br>
+          <div>
+            <h3>Tin đọc nhiều</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

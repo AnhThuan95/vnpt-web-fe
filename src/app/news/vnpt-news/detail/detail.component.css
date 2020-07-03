@@ -1,0 +1,17 @@
+.tit {
+  font-size: 25px;
+  color: #0064c8;
+}
+
+.tit span {
+  font-size: 14px;
+}
+
+.content {
+  font-size: 17px;
+}
+
+.nav-link, h4 {
+  font-weight: 500;
+  white-space: nowrap;
+}

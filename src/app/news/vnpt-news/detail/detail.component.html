@@ -1,1 +1,85 @@
-<p>detail works!</p>
+<div class="row justify-content-center">
+  <div class="container mc0">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb bg-white pl-0 pt-3">
+        <li class="breadcrumb-item"><a routerLink="/"><i class="fa fa-home"></i> Trang chủ</a></li>
+        <li class="breadcrumb-item"><a routerLink="/news/vnpt-news">Tin VNPT</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Nội dung</li>
+      </ol>
+    </nav>
+    <div class="row justify-content-between">
+      <div class="col-md-9">
+        <div class="rounded border bg-light">
+          <div *ngIf="news; else nothing" class="m-3">
+            <p class="tit text-uppercase font-weight-bold">{{news.title}}&nbsp;&nbsp;&nbsp;&nbsp;<span
+              class="badge font-weight-normal">{{news.postDate}}</span></p>
+            <p class="text-capitalize font-weight-bold">{{news.description}}</p>
+            <div class="d-flex justify-content-center m-2 mb-4">
+              <img [src]="'data:image/jpeg;base64,' + news.imgUrl.picByte" width="80%" alt="">
+            </div>
+            <div *ngFor="let str of strs, index as i" class="content">
+              <p>{{str}}</p>
+            </div>
+            <br>
+            <p>Nguồn: {{news.author}}</p>
+          </div>
+          <div *ngIf="news; else nothing">
+            <div class="row text-center m-3">
+              <button class="btn btn-info mr-3" routerLink="../../edit/{{news.id}}" aria-label="Edit">
+                Sửa tin &nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+
+              <button class="btn btn-danger" data-toggle="modal" data-target="#deleteVnptNews">
+                Xóa tin <i class="fa fa-trash" aria-hidden="true"></i></button>
+              <div class="modal fade" id="deleteVnptNews" tabindex="-1" role="dialog"
+                   aria-labelledby="deleteVnptNewsTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteVnptNewsTitle">Xóa tin</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Bạn muốn xóa tin này?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
+                      <button type="button" class="btn btn-primary" (click)="delete()"
+                              data-dismiss="modal">Có
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ng-template #nothing>
+            <p>Nothing to show</p>
+          </ng-template>
+        </div>
+
+        <div class="tin mt-5">
+          <h4>Tin mới:</h4>
+          <div class="row m-1" *ngFor="let item of news3, index as i">
+            <a href="/news/vnpt-news/detail/{{item.id}}">{{item.title}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mt-0 p-0 rounded border">
+        <div class="position-sticky col-10" style="top:80px;">
+          <nav class="nav flex-column">
+            <h4>Tin tức</h4>
+            <a class="nav-link active" routerLink="/news/promotion-news">Tin khuyến mãi</a>
+            <a class="nav-link" routerLink="/news/vnpt-news">Tin VNPT</a>
+            <a class="nav-link" routerLink="/news/hatinh-news">Tin VNPT Hà Tĩnh</a>
+          </nav>
+          <br><br>
+          <div>
+            <h4>Tin đọc nhiều</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

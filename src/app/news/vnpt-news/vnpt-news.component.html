@@ -1,1 +1,54 @@
-<p>vnpt-news works!</p>
+<div class="row justify-content-center">
+  <div class="container mc0">
+    <div class="row justify-content-between">
+      <div class="col-md-9">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-white pl-0 pt-3">
+            <li class="breadcrumb-item"><a routerLink="/"><i class="fa fa-home"></i> Trang chủ</a></li>
+            <li class="breadcrumb-item"><a routerLink="/">Tin tức</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Tin VNPT</li>
+          </ol>
+        </nav>
+        <div class="create-but pb-4">
+          <button type="button" class="btn btn-primary" routerLink="create">
+            <i class="fa fa-plus-square"></i> Tạo tin mới
+          </button>
+        </div>
+
+        <div class="row ds pt-3 pb-3" *ngFor="let item of pageOfItems, index as i">
+          <a class="col-md-12 col-lg-4" [routerLink]="['detail',item.id]"><img class="rounded"
+                                                                               [src]="'data:image/jpeg;base64,' + item.imgUrl.picByte"
+                                                                               width="200px"></a>
+          <div class="col-md-12 col-lg-8 pt-0">
+            <p><a class="tit" routerLink="detail/{{item.id}}">{{item.title}}</a></p>
+            <p>{{item.description}}</p>
+          </div>
+          <div *ngIf="!news"><h3>Danh sách rỗng</h3></div>
+        </div>
+        <div class="pagination1 mt-4">
+          <jw-pagination [pageSize]="size" [items]="news" (changePage)="onChangePage($event)"></jw-pagination>
+        </div>
+        <div class="tin">
+          <h4>Tin mới:</h4>
+          <div class="row m-1" *ngFor="let item of news3, index as i">
+            <a class="" routerLink="detail/{{item.id}}">{{item.title}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 mt-5 p-0">
+        <div class="position-sticky" style="top:80px;">
+          <nav class="nav flex-column">
+            <h3>Tin tức</h3>
+            <a class="nav-link active" routerLink="/news/promotion-news">Tin khuyến mãi</a>
+            <a class="nav-link" routerLink="/news/vnpt-news">Tin VNPT</a>
+            <a class="nav-link" routerLink="/news/hatinh-news">Tin VNPT Hà Tĩnh</a>
+          </nav>
+          <br><br>
+          <div>
+            <h3>Tin đọc nhiều</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
