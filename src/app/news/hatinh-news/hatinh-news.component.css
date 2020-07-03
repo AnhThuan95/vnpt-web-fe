@@ -1,0 +1,38 @@
+.mc0 {
+  width: 1200px;
+}
+
+img {
+  width: 200px;
+}
+
+.create-but {
+  border-bottom: 1px solid #dedede;
+}
+
+.ds {
+  border-bottom: 1px solid #dedede;
+}
+
+.tit {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.nav-link {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.pagination1 {
+  margin-left: -15px;
+  font-weight: 600;
+}
+
+.tin h4{
+  margin-left: -15px;
+}
+
+h3 {
+  white-space: nowrap;
+}
