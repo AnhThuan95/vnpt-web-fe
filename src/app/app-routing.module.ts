@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: 'news/hatinh-news',
-    component: HatinhNewsComponent,
+    loadChildren: () => import('./news/hatinh-news/hatinh-news-routing.module').then(m => m.HatinhNewsRoutingModule)
   },
   {
     path: 'introduction',
