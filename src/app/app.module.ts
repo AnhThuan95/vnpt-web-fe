@@ -24,6 +24,7 @@ import {IntroductionModule} from "./introduction/introduction.module";
 import { ProvinceComponent } from './support/province/province.component';
 import { InternationalComponent } from './support/international/international.component';
 import {HatinhNewsModule} from "./news/hatinh-news/hatinh-news.module";
+import {VnptNewsModule} from "./news/vnpt-news/vnpt-news.module";
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import {HatinhNewsModule} from "./news/hatinh-news/hatinh-news.module";
     JwPaginationModule,
     IntroductionModule,
     HatinhNewsModule,
+    VnptNewsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAWIG91eX9VIfqBQMJjnLAsXZb3ncn6-wI'
     }),

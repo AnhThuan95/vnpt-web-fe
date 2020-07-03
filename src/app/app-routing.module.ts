@@ -2,8 +2,6 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
-import {VnptNewsComponent} from "./news/vnpt-news/vnpt-news.component";
-import {HatinhNewsComponent} from "./news/hatinh-news/hatinh-news.component";
 import {ProvinceComponent} from "./support/province/province.component";
 import {InternationalComponent} from "./support/international/international.component";
 
@@ -18,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'news/vnpt-news',
-    component: VnptNewsComponent,
+    loadChildren: () => import('./news/vnpt-news/vnpt-news-routing.module').then(m => m.VnptNewsRoutingModule)
   },
   {
     path: 'news/hatinh-news',
