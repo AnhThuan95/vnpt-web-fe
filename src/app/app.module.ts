@@ -22,6 +22,7 @@ import {TransactionModule} from "./support/transaction/transaction.module";
 import {IntroductionComponent} from './introduction/introduction.component';
 import {IntroductionModule} from "./introduction/introduction.module";
 import { ProvinceComponent } from './support/province/province.component';
+import { InternationalComponent } from './support/international/international.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ProvinceComponent } from './support/province/province.component';
     TransactionComponent,
     IntroductionComponent,
     ProvinceComponent,
+    InternationalComponent,
   ],
   imports: [
     BrowserModule,

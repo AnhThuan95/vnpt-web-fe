@@ -5,6 +5,7 @@ import {HomeComponent} from "./home/home.component";
 import {VnptNewsComponent} from "./news/vnpt-news/vnpt-news.component";
 import {HatinhNewsComponent} from "./news/hatinh-news/hatinh-news.component";
 import {ProvinceComponent} from "./support/province/province.component";
+import {InternationalComponent} from "./support/international/international.component";
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'support/province',
     component: ProvinceComponent
+  },
+  {
+    path: 'support/international',
+    component: InternationalComponent
   }
 ];
 

@@ -11,11 +11,14 @@
         </nav>
         <div class="create-but pb-4">
           <button type="button" class="btn btn-primary" routerLink="create">
-            <i class="fa fa-plus-square"></i> Tạo tin mới</button>
+            <i class="fa fa-plus-square"></i> Tạo tin mới
+          </button>
         </div>
 
         <div class="row ds pt-3 pb-3" *ngFor="let item of pageOfItems, index as i">
-          <a class="col-md-12 col-lg-4" [routerLink]="['detail',item.id]"><img class="rounded" [src]="'data:image/jpeg;base64,' + item.imgUrl.picByte" width="200px"></a>
+          <a class="col-md-12 col-lg-4" [routerLink]="['detail',item.id]"><img class="rounded"
+                                                                               [src]="'data:image/jpeg;base64,' + item.imgUrl.picByte"
+                                                                               width="200px"></a>
           <div class="col-md-12 col-lg-8 pt-0">
             <p><a class="tit" routerLink="detail/{{item.id}}">{{item.title}}</a></p>
             <p>{{item.description}}</p>
@@ -35,9 +38,10 @@
       <div class="col-md-2 mt-5 p-0">
         <div class="position-sticky" style="top:80px;">
           <nav class="nav flex-column">
-              <a class="nav-link active" routerLink="/news/promotion-news">Tin khuyến mãi</a>
-              <a class="nav-link" routerLink="/news/vnpt-news">Tin VNPT</a>
-              <a class="nav-link" routerLink="/news/hatinh-news">Tin VNPT Hà Tĩnh</a>
+            <h3>Tin tức</h3>
+            <a class="nav-link active" routerLink="/news/promotion-news">Tin khuyến mãi</a>
+            <a class="nav-link" routerLink="/news/vnpt-news">Tin VNPT</a>
+            <a class="nav-link" routerLink="/news/hatinh-news">Tin VNPT Hà Tĩnh</a>
           </nav>
           <br><br>
           <div>
